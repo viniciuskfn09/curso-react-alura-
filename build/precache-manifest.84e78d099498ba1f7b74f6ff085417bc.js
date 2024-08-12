@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d8cf0dd3f261c89c15d153071c231455",
+    "revision": "dd3205f4ede8934bdb01cf2fc495d42d",
     "url": "/%3Ccurso-react-alura%3E/index.html"
   },
   {
