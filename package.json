@@ -13,7 +13,7 @@
     "react-router-dom": "^6.26.0",
     "react-scripts": "3.4.1"
   },
-  "homepage": "https://<viniciuskfn09>.github.io/<curso-react-alura>",
+  "homepage": "https://github.com/viniciuskfn09/curso-react-alura-.git>",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
