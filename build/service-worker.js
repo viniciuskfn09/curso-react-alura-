@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/%3Ccurso-react-alura%3E/precache-manifest.84e78d099498ba1f7b74f6ff085417bc.js"
+  "/%3Ccurso-react-alura%3E/precache-manifest.6faee321677c3cb55337055c4daec647.js"
 );
 
 self.addEventListener('message', (event) => {

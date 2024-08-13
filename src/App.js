@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import UserList from './UserList';
 import UserPage from './UserPage';
 import './App.css';
@@ -27,15 +27,18 @@ const App = () => {
   };
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="container">
         <Routes>
           <Route path="/" element={<UserList users={users} />} />
           <Route path="/user/:id" element={<UserPage users={users} addNote={addNote} removeNote={removeNote} />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
+    
   );
+
+  
 };
 
 export default App;

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dd3205f4ede8934bdb01cf2fc495d42d",
+    "revision": "338a12ed4a71871bea1f5f94b58e0906",
     "url": "/%3Ccurso-react-alura%3E/index.html"
   },
   {
-    "revision": "0e6ebf9cdbe6e8627442",
+    "revision": "f688641b1bc73aec3b70",
     "url": "/%3Ccurso-react-alura%3E/static/css/main.caf79935.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/%3Ccurso-react-alura%3E/static/js/2.5c628cd7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0e6ebf9cdbe6e8627442",
-    "url": "/%3Ccurso-react-alura%3E/static/js/main.a27cea18.chunk.js"
+    "revision": "f688641b1bc73aec3b70",
+    "url": "/%3Ccurso-react-alura%3E/static/js/main.7311db93.chunk.js"
   },
   {
     "revision": "d3c2e08d126b3ed30a9e",
