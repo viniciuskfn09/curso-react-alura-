@@ -1,44 +1,64 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
-import UserList from './UserList';
-import UserPage from './UserPage';
-import './App.css';
 
 const App = () => {
-  const [users, setUsers] = useState([
-    { id: 1, name: 'VicBoça', notes: [] },
-    { id: 2, name: 'ViniBoça', notes: [] },
-    { id: 3, name: 'Manaia VVQueiro', notes: [] },
-    { id: 4, name: 'Cazenrique', notes: [] },
-    { id: 5, name: 'Lucena', notes: [] },
-    { id: 6, name: 'Bréqui Silva', notes: [] }
-  ]);
+  // Estado inicial com quatro times
+  const [teams, setTeams] = useState({
+    team1: 'Time 1',
+    team2: 'Time 2',
+    team3: 'Time 3',
+    team4: 'Time 4'
+  });
 
-  const addNote = (userId, note) => {
-    setUsers(users.map(user =>
-      user.id === userId ? { ...user, notes: [...user.notes, note] } : user
-    ));
+  // Estado para os resultados das semifinais e da final
+  const [results, setResults] = useState({
+    semifinal1: null,
+    semifinal2: null,
+    final: null
+  });
+
+  // Função para simular o resultado de uma partida
+  const simulateMatch = (teamA, teamB) => {
+    // Escolhe aleatoriamente o vencedor
+    return Math.random() > 0.5 ? teamA : teamB;
   };
 
-  const removeNote = (userId, noteIndex) => {
-    setUsers(users.map(user =>
-      user.id === userId ? { ...user, notes: user.notes.filter((_, index) => index !== noteIndex) } : user
-    ));
+  // Função para executar as semifinais e a final
+  const runTournament = () => {
+    const { team1, team2, team3, team4 } = teams;
+
+    // Simular semifinal 1
+    const semifinal1Winner = simulateMatch(team1, team2);
+    // Simular semifinal 2
+    const semifinal2Winner = simulateMatch(team3, team4);
+    // Simular final
+    const finalWinner = simulateMatch(semifinal1Winner, semifinal2Winner);
+
+    setResults({
+      semifinal1: semifinal1Winner,
+      semifinal2: semifinal2Winner,
+      final: finalWinner
+    });
   };
 
   return (
-    <BrowserRouter>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<UserList users={users} />} />
-          <Route path="/user/:id" element={<UserPage users={users} addNote={addNote} removeNote={removeNote} />} />
-        </Routes>
+    <div>
+      <h1>Mata-Mata</h1>
+      <div>
+        <h2>Times:</h2>
+        <p>{teams.team1} vs {teams.team2}</p>
+        <p>{teams.team3} vs {teams.team4}</p>
       </div>
-    </BrowserRouter>
-    
+      <button onClick={runTournament}>Rodar Torneio</button>
+      {results.semifinal1 && results.semifinal2 && results.final && (
+        <div>
+          <h2>Resultados:</h2>
+          <p>Semifinal 1: {results.semifinal1}</p>
+          <p>Semifinal 2: {results.semifinal2}</p>
+          <h3>Final: {results.final}</h3>
+        </div>
+      )}
+    </div>
   );
-
-  
 };
 
 export default App;
